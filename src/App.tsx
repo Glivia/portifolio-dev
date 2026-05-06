@@ -1,23 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import {
-  ArrowUpRight, Github, Linkedin, Mail, Smartphone, Globe, Code2, Sparkles, Briefcase, GraduationCap,
-  ArrowRight, Download, Send, MapPin, Phone, ChevronDown, ChevronUp,
-} from "lucide-react";
+import { Github, Linkedin, Download, Send, Phone, Mail, MapPin, Smartphone, Globe, Code2, ChevronDown, ChevronUp, Briefcase, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import devPortrait from "@/assets/foto-perfil.jpeg";
-import appReact from "@/assets/app-react.png";
-import appFlutter from "@/assets/app-flutter.png";
-
-export const Route = createFileRoute("/")({
-  component: Index,
-  head: () => ({
-    meta: [
-      { title: "Glivia Cavalcante — Front-End Web & Mobile Developer" },
-      { name: "description", content: "Portfólio de Glivia Cavalcante, desenvolvedora front-end web & mobile. React, React Native, TypeScript e interfaces refinadas." },
-    ],
-  }),
-});
 
 const services = [
   { n: "01", title: "Front-End Development", desc: "Specialized in creating dynamic, modern, and fully responsive interfaces using React, Vue.js, and JavaScript." },
@@ -40,9 +24,9 @@ const projects = [
 ];
 
 const experience = [
-  { period: "2025 — Present", role: "Front-End Developer", company: "Zenir Móveis e Eletros & Freelancer", desc: "Focus on creating dynamic and responsive interfaces using React, Vue.js, and Node.js. Development of native and hybrid mobile applications with React Native, FlutterFlow, and Flutter. Implementation of scalable architectures and real-time databases using Supabase and Firebase." },
-  { period: "2024 — 2025", role: "IT Technical Support (Help Desk)", company: "Zenir Móveis e Eletros", desc: "Specialized support for the Odoo ERP, resolving fiscal incidents and managing sales workflows. Management of credit analysis processes, cash flow, and inventory control." },
-  { period: "2023 — 2024", role: "IT Intern", company: "Zenir Móveis e Eletros", desc: "E-commerce system optimization using HTML, CSS, JavaScript, VTEX, and Odoo." },
+  { period: "2025 — Present", role: "Front-End Developer", company: "Zenir Móveis & Eletros & Freelancer", desc: "Focus on creating dynamic and responsive interfaces using React, Vue.js, and Node.js. Development of native and hybrid mobile applications with React Native, FlutterFlow, and Flutter. Implementation of scalable architectures and real-time databases using Supabase and Firebase." },
+  { period: "2024 — 2025", role: "IT Technical Support (Help Desk)", company: "Zenir Móveis & Eletros", desc: "Specialized support for the Odoo ERP, resolving fiscal incidents and managing sales workflows. Management of credit analysis processes, cash flow, and inventory control." },
+  { period: "2023 — 2024", role: "IT Intern", company: "Zenir Móveis & Eletros", desc: "E-commerce system optimization using HTML, CSS, JavaScript, VTEX, and Odoo." },
 ];
 
 const education = [
@@ -60,7 +44,7 @@ const skills = [
   { name: "Flutter", level: 80 },
 ];
 
-function Index() {
+export default function App() {
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
   const [selectedFilter, setSelectedFilter] = useState("All");
@@ -83,7 +67,6 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased selection:bg-primary/40 selection:text-foreground">
-      {/* Nav */}
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <nav className="w-full px-6 h-16 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2 font-semibold">
@@ -95,7 +78,6 @@ function Index() {
             <a href="#works" className="hover:text-foreground transition-colors">Works</a>
             <a href="#resume" className="hover:text-foreground transition-colors">Resume</a>
             <a href="#skills" className="hover:text-foreground transition-colors">Skills</a>
-            
             <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
           </div>
           <Button asChild size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold px-6">
@@ -104,7 +86,6 @@ function Index() {
         </nav>
       </header>
 
-      {/* Hero */}
       <section className="relative pt-32 pb-24 px-6 overflow-hidden">
         <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
         <div className="absolute top-20 left-0 w-[500px] h-[500px] rounded-full -z-10 blur-[100px] opacity-20 bg-primary" />
@@ -119,7 +100,7 @@ function Index() {
             <p className="text-muted-foreground max-w-5xl mb-6 leading-relaxed">
                A Computer Science major and Front-end Developer, I bridge the gap between logical software engineering and the artistry of UI/UX Design. My expertise lies in crafting modern, intuitive interfaces for both Web and Mobile, leveraging an ecosystem that ranges from the speed of FlutterFlow to the robustness of React, React Native, and Vue.js. My goal is to ensure every pixel serves a purpose while maintaining top-tier performance.
 
-Focused on the user interaction layer, I integrate high-end services using Supabase, Firebase, and AWS to build reactive and secure applications. My technical background allows me to collaborate strategically with back-end teams, while my designer's perspective ensures the final product is user-centric—combining clean code, accessibility, and high-fidelity design.
+Focused on the user interaction layer, I integrate high-end services using Supabase, Firebase, and AWS to build reactive and secure applications. My technical background allows me to collaborate strategically with back-end teams, while my designer&apos;s perspective ensures the final product is user-centric—combining clean code, accessibility, and high-fidelity design.
             </p>
             <div className="flex flex-wrap items-center gap-4 mb-10">
               <Button asChild size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold group">
@@ -137,11 +118,9 @@ Focused on the user interaction layer, I integrate high-end services using Supab
                 </a>
               </div>
             </div>
-
             <div className="pt-8 border-t border-border"></div>
           </div>
 
-          {/* Portrait */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="absolute inset-0 rounded-full blur-3xl opacity-40 bg-primary -z-10" />
             <div className="relative w-[380px] md:w-[500px] aspect-square rounded-full p-2 border-2 border-primary/50 shadow-[0_20px_60px_-15px_rgba(0,166,192,0.5)]" style={{ background: "var(--gradient-primary)" }}>
@@ -157,7 +136,6 @@ Focused on the user interaction layer, I integrate high-end services using Supab
         </div>
       </section>
 
-      {/* Services */}
       <section id="services" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
@@ -166,13 +144,9 @@ Focused on the user interaction layer, I integrate high-end services using Supab
              The services I offer to transform ideas into exceptional digital products.
             </p>
           </div>
-
           <div className="space-y-3">
-            {services.map((s, i) => (
-              <div
-                key={s.title}
-                className="group relative rounded-2xl p-6 md:p-7 border border-border bg-card hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-500 cursor-pointer"
-              >
+            {services.map((s) => (
+              <div key={s.title} className="group relative rounded-2xl p-6 md:p-7 border border-border bg-card hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-500 cursor-pointer">
                 <div className="flex items-center gap-6">
                   <div className="font-mono text-sm text-muted-foreground group-hover:text-primary-foreground/70">{s.n}</div>
                   <h3 className="text-xl md:text-2xl font-semibold flex-1">{s.title}</h3>
@@ -186,24 +160,18 @@ Focused on the user interaction layer, I integrate high-end services using Supab
         </div>
       </section>
 
-      {/* Works */}
       <section id="works" className="py-24 px-6 bg-card/30 border-y border-border">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">My <span className="text-primary">Recent Works</span></h2>
             <div className="inline-flex mt-6 p-1 rounded-full bg-card border border-border">
               {["All", "Apps", "Web", "Backend", "UI/UX"].map((f) => (
-                <button
-                  key={f}
-                  onClick={() => setSelectedFilter(f)}
-                  className={`px-5 py-1.5 text-xs font-medium rounded-full transition-colors ${selectedFilter === f ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
-                >
+                <button key={f} onClick={() => setSelectedFilter(f)} className={`px-5 py-1.5 text-xs font-medium rounded-full transition-colors ${selectedFilter === f ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}>
                   {f}
                 </button>
               ))}
             </div>
           </div>
-
           <div className="grid md:grid-cols-2 gap-6 items-start">
             {filteredProjects.map((p) => (
               <article key={p.title} className="group relative rounded-2xl overflow-hidden border border-border bg-card hover:border-primary/50 transition-all duration-500 cursor-pointer">
@@ -213,13 +181,7 @@ Focused on the user interaction layer, I integrate high-end services using Supab
                     {p.category === "Mobile" ? <Smartphone className="w-3 h-3" /> : p.category === "Web" ? <Globe className="w-3 h-3" /> : <Code2 className="w-3 h-3" />}
                     {p.tag}
                   </div>
-                  <button 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setExpandedProject(expandedProject === p.id ? null : p.id);
-                    }}
-                    className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/90 grid place-items-center transition-all duration-300"
-                  >
+                  <button onClick={(e) => { e.stopPropagation(); setExpandedProject(expandedProject === p.id ? null : p.id); }} className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/90 grid place-items-center transition-all duration-300">
                     {expandedProject === p.id ? <ChevronUp className="w-4 h-4 text-foreground" /> : <ChevronDown className="w-4 h-4 text-foreground" />}
                   </button>
                 </div>
@@ -241,13 +203,9 @@ Focused on the user interaction layer, I integrate high-end services using Supab
         </div>
       </section>
 
-      {/* Resume — Experience & Education */}
       <section id="resume" className="py-24 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
-          {[
-            { icon: Briefcase, title: "My Experience", items: experience },
-            { icon: GraduationCap, title: "My Education", items: education },
-          ].map((col) => (
+          {[{ icon: Briefcase, title: "My Experience", items: experience }, { icon: GraduationCap, title: "My Education", items: education }].map((col) => (
             <div key={col.title}>
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-10 h-10 rounded-full grid place-items-center bg-primary/15 text-primary border border-primary/30">
@@ -270,7 +228,6 @@ Focused on the user interaction layer, I integrate high-end services using Supab
         </div>
       </section>
 
-      {/* Skills */}
       <section id="skills" className="py-24 px-6 bg-card/30 border-y border-border">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
@@ -285,13 +242,7 @@ Focused on the user interaction layer, I integrate high-end services using Supab
                 <div className="relative w-20 h-20 mx-auto mb-4">
                   <svg viewBox="0 0 80 80" className="w-full h-full -rotate-90">
                     <circle cx="40" cy="40" r="34" stroke="currentColor" strokeWidth="4" fill="none" className="text-border" />
-                    <circle
-                      cx="40" cy="40" r="34"
-                      stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round"
-                      className="text-primary"
-                      strokeDasharray={`${2 * Math.PI * 34}`}
-                      strokeDashoffset={`${2 * Math.PI * 34 * (1 - s.level / 100)}`}
-                    />
+                    <circle cx="40" cy="40" r="34" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" className="text-primary" strokeDasharray={`${2 * Math.PI * 34}`} strokeDashoffset={`${2 * Math.PI * 34 * (1 - s.level / 100)}`} />
                   </svg>
                   <div className="absolute inset-0 grid place-items-center text-sm font-bold">{s.level}%</div>
                 </div>
@@ -302,57 +253,29 @@ Focused on the user interaction layer, I integrate high-end services using Supab
         </div>
       </section>
 
-      {/* Contact */}
       <section id="contact" className="py-24 px-6 bg-card/30 border-t border-border">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Let's <span className="text-primary">work together!</span></h2>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Let&apos;s <span className="text-primary">work together!</span></h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              Have a project in mind? Tell me about it and let's build something memorable.
+              Have a project in mind? Tell me about it and let&apos;s build something memorable.
             </p>
           </div>
-
           <div className="grid lg:grid-cols-3 gap-6">
             <form onSubmit={handleSubmit} className="lg:col-span-2 rounded-2xl p-8 bg-card border border-border space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
-                <input 
-                  placeholder="Your Name" 
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary outline-none transition-colors text-sm" 
-                />
-                <input 
-                  placeholder="Your Email" 
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary outline-none transition-colors text-sm" 
-                />
+                <input placeholder="Your Name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary outline-none transition-colors text-sm" />
+                <input placeholder="Your Email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary outline-none transition-colors text-sm" />
               </div>
-              <input 
-                placeholder="Project Subject" 
-                value={formData.subject}
-                onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary outline-none transition-colors text-sm" 
-              />
-              <textarea 
-                placeholder="Tell me about your project..." 
-                rows={5} 
-                value={formData.message}
-                onChange={(e) => setFormData({...formData, message: e.target.value})}
-                className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary outline-none transition-colors text-sm resize-none" 
-              />
+              <input placeholder="Project Subject" value={formData.subject} onChange={(e) => setFormData({...formData, subject: e.target.value})} className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary outline-none transition-colors text-sm" />
+              <textarea placeholder="Tell me about your project..." rows={5} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary outline-none transition-colors text-sm resize-none" />
               <Button type="submit" size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold group">
                 Send Message
                 <Send className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </Button>
             </form>
-
             <div className="rounded-2xl p-8 bg-card border border-border space-y-6">
-              {[
-                { icon: Phone, label: "Phone", value: "+55 88 99661-2097" },
-                { icon: Mail, label: "Email", value: "gliviacavalcante@gmail.com" },
-                { icon: MapPin, label: "Location", value: "Ceará, BR" },
-              ].map((c) => (
+              {[{ icon: Phone, label: "Phone", value: "+55 88 99661-2097" }, { icon: Mail, label: "Email", value: "gliviacavalcante@gmail.com" }, { icon: MapPin, label: "Location", value: "Ceará, BR" }].map((c) => (
                 <div key={c.label} className="flex items-start gap-4">
                   <div className="w-11 h-11 rounded-full grid place-items-center bg-primary/15 border border-primary/30 text-primary shrink-0">
                     <c.icon className="w-4 h-4" />
