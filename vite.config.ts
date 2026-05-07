@@ -5,5 +5,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), tsconfigPaths()],
-  base: "/",
+  base: "/portifolio/",
+  build: {
+    outDir: "dist",
+  },
 });
