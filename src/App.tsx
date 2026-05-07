@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Github, Linkedin, Download, Send, Phone, Mail, MapPin, Smartphone, Globe, Code2, ChevronDown, ChevronUp, Briefcase, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import devPortrait from "@/assets/foto-perfil.jpeg";
+import devPortrait from "@/assets/foto-perfil.png";
 
 const services = [
   { n: "01", title: "Front-End Development", desc: "Specialized in creating dynamic, modern, and fully responsive interfaces using React, Vue.js, and JavaScript." },
@@ -123,7 +123,7 @@ Focused on the user interaction layer, I integrate high-end services using Supab
 
           <div className="relative flex justify-center lg:justify-end">
             <div className="absolute inset-0 rounded-full blur-3xl opacity-40 bg-primary -z-10" />
-            <div className="relative w-[380px] md:w-[500px] aspect-square rounded-full p-2 border-2 border-primary/50 shadow-[0_20px_60px_-15px_rgba(0,166,192,0.5)]" style={{ background: "var(--gradient-primary)" }}>
+            <div className="relative w-[380px] md:w-[500px] aspect-square rounded-full p-2 border-2 border-primary/50 shadow-[0_20px_60px_-15px_rgba(180,160,220,0.5)]" style={{ background: "var(--gradient-primary)" }}>
               <div className="w-full h-full rounded-full overflow-hidden bg-card">
                 <img src={devPortrait} alt="Glivia Cavalcante" width={500} height={500} className="w-full h-full object-cover" />
               </div>
